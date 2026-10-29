@@ -1,0 +1,39 @@
+schema: spec-driven
+
+context: |
+  Language: Japanese. Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Netz is a single-owner research HTTP API on Cloudflare Workers (TypeScript/pnpm).
+  Flow: define scope and sufficiency criteria, confirm the plan, collect evidence using
+  configured verified MCP tools, evaluate sufficiency, save a report to Notion.
+  Additional spending must remain zero. Stop at free quotas; never use paid fallbacks.
+  Initial per-request limits: 3 search attempts, 5 page retrieval attempts, 4 inference calls.
+  Count planning, revisions, retries and finalization; share budgets across tools and restarts.
+  All business HTTP endpoints require the owner's Bearer token.
+  MCP Portal and Cloudflare Workflows service adoption remain unverified choices.
+  Current MVP: changes/implement-research-workflow. Artifact readiness does not mean implementation done.
+  Development change rules and issue mapping: docs/openspec-workflow.md.
+
+rules:
+  proposal:
+    - "Identify affected issues, capability paths, scope and non-goals."
+    - "Separate verified facts, proposed decisions and unverified integrations."
+  specs:
+    - "Use ### Requirement: and #### Scenario: with SHALL/MUST and WHEN/THEN."
+    - "Specify observable behavior and errors; keep implementation choices in design."
+    - "Preserve owner-only access, zero spending, evidence-backed sufficiency and shared budgets."
+  design:
+    - "Record decisions, alternatives, evidence and adoption gates."
+    - "Use compact Mermaid for branches and state transitions; tables for exact values."
+  tasks:
+    - "Use numbered checkbox tasks with verification methods and issue references."
+    - "Update scenarios and focused tests alongside implementation; distinguish mocks from live checks."
+operations:
+  apply:
+    guidance:
+      - "Read AGENTS.md and docs/openspec-workflow.md."
+      - "Update design, delta specs and tasks when implementation discoveries change them."
+      - "Do not weaken constraints to match the code; resolve design gates before dependent work."
+  archive:
+    guidance:
+      - "Check task completion and implementation evidence; validation alone is insufficient."
+      - "Keep incomplete changes active and preserve issue/PR references."
