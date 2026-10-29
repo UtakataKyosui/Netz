@@ -1,6 +1,21 @@
 # Netz
 AIによる情報収集によるナレッジ収集
 
+## 仕様と開発フロー
+
+OpenSpecで仕様・設計・実装タスクを管理します。[運用手順](docs/openspec-workflow.md)を参照してください。
+
+```bash
+pnpm add -g @fission-ai/openspec@latest
+openspec status --change implement-research-workflow --json
+openspec validate --all --strict --no-interactive
+```
+
+MVPの仕様は[作業中の変更](openspec/changes/implement-research-workflow/proposal.md)にまとめています。
+実装中の細部変更は設計・差分仕様・タスクへ反映し、対応するIssueとPRに判断理由を残します。
+現在は初期コードの段階であり、仕様の追加を実装完了とは扱いません。
+以下のサービス一覧と図は初期構想です。採用状況・無料条件・計画承認を含む最新の要件はOpenSpecの変更とIssue #1〜#7を参照してください。
+
 ## WorkerのWorkflow
 
 ```mermaid
@@ -12,7 +27,7 @@ sequenceDiagram
     participant W as Web
     participant N@{ "type": "database" } as Notion
 
-    U ->> C: Message Send 
+    U ->> C: Message Send
     C ->> CQ: Queue Set
     CQ ->> CWI: Send Prompt(Request)
 

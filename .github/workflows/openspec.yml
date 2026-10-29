@@ -1,0 +1,33 @@
+name: OpenSpec validation
+
+on:
+  pull_request:
+    paths:
+      - 'openspec/**'
+      - 'docs/openspec-workflow.md'
+      - 'AGENTS.md'
+      - '.github/workflows/openspec.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'openspec/**'
+      - 'docs/openspec-workflow.md'
+      - 'AGENTS.md'
+      - '.github/workflows/openspec.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      OPENSPEC_TELEMETRY: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: corepack enable
+      - run: corepack prepare pnpm@11.25.0 --activate
+      - run: pnpm dlx @fission-ai/openspec@1.15.0 validate --all --strict --no-interactive

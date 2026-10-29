@@ -1,3 +1,19 @@
+# Netz: specification-driven development
+
+Read `docs/openspec-workflow.md` and `openspec/config.yaml` before implementation.
+Use OpenSpec for behavior contracts and in-flight changes; use GitHub issues for tracking.
+Current MVP change: `openspec/changes/implement-research-workflow/` (not implemented yet).
+
+- Read relevant main specs and active delta specs, design and tasks before editing code.
+- When implementation reveals a detail change, update design/tasks and its rationale.
+- When observable behavior changes, update delta requirements and scenarios in the same PR.
+- Preserve owner-only access, zero additional spending, shared request budgets and evidence-based sufficiency.
+- Do not silently weaken accepted constraints or a running research plan to match implementation.
+- Resolve documented adoption gates before dependent implementation; distinguish mocks from live evidence.
+- Run `openspec validate --all --strict --no-interactive` and relevant scenario checks.
+- Artifact readiness and syntax validation do not prove implementation completion. Do not archive unfinished work.
+- Generated `.claude` / `.agents` OpenSpec integrations are CLI-owned. Put custom rules in config/docs.
+
 # Cloudflare Workers
 
 STOP. Your knowledge of Cloudflare Workers APIs and limits may be outdated. Always retrieve current documentation before any Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, or Agents SDK task.
