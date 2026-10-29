@@ -43,6 +43,13 @@
 - [ ] 6.2 本人依頼→条件確定→承認→収集→評価→Notion保存を実環境で確認し、部分/失敗/期限切れ/枠切れ/保存不明のケースと証跡をIssue #7へ記録する。
 - [ ] 6.3 全シナリオ・Issue受入条件・実装・文書を照合し、openspec validate --all --strict --no-interactiveと採用した実装チェックを通す。未確認は完了扱いにしない。
 
+## 7. Effect境界への接続（#3 #4 #5 #6 #7）
+
+Effect共通基盤はadopt-effect-error-handlingで先行導入する。以下はMVPへの接続確認であり、基盤単体のテストでは完了にならない。
+
+- [ ] 7.1 fetch/queueおよび採用時のWorkflowへEffect境界を接続し、分類・安全なログ・キャンセル・状態記録と配送判断をWorkers上で検証する（#3 #5 #7）。
+- [ ] 7.2 MCP・検索・AI・NotionのPromise/SDKを型付き失敗へ変換し、枠切れと一時制限、Notion書き込み結果不明、SDKを含む多重リトライ防止を実証する（#4 #5 #6 #7）。
+
 ## Workflow follow-up
 
 - 実装・確認とレビューが完了した後に差分仕様を同期・archiveする。現時点ではarchiveしない。

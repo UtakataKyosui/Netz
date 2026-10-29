@@ -3,6 +3,7 @@ schema: spec-driven
 context: |
   Language: Japanese. Keep OpenSpec structural headings and SHALL/MUST keywords in English.
   Netz is a single-owner research HTTP API on Cloudflare Workers (TypeScript/pnpm).
+  Use Effect 4 for typed failures, selective recovery and runtime boundaries; see docs/error-handling.md.
   Flow: define scope and sufficiency criteria, confirm the plan, collect evidence using
   configured verified MCP tools, evaluate sufficiency, save a report to Notion.
   Additional spending must remain zero. Stop at free quotas; never use paid fallbacks.

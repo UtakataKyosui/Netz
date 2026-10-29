@@ -3,6 +3,9 @@ AIによる情報収集によるナレッジ収集
 
 ## 仕様と開発フロー
 
+エラー処理にはEffectを採用します。[分類・回復・実行境界の方針](docs/error-handling.md)を参照してください。
+共通基盤の導入段階であり、既存fetch/queueへの適用とWorkers上の検証はMVPの未完了タスクです。
+
 OpenSpecで仕様・設計・実装タスクを管理します。[運用手順](docs/openspec-workflow.md)を参照してください。
 
 ```bash

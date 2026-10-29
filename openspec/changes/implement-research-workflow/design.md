@@ -66,6 +66,13 @@ LLMの評価理由を証拠へ対応づけ、必須項目・参照整合性・�
 Notion保存はモデルの任意ツール呼び出しにしない。保存先はサーバー設定、requestIdとpage IDを対応づける。
 同時作成を防ぎ、ページ作成・本文追記後の応答喪失を照合する。未確定はsave_unknownで停止し、即時再作成しない。
 
+### 6. Effectによる失敗の分類と境界
+
+Effect 4.1.0の型付きエラー・回復判断・HTTP境界を共通基盤として使う。詳細はdocs/error-handling.md。
+外部PromiseはアダプターでtryPromiseへ変換し、枠切れ・一時制限・結果不明を明示的に分類する。
+共通基盤の導入では既存fetch/queueを移行済みとしない。永続状態を更新した後に配送を判断し、SDK/Effect/Queue/Workflowの多重リトライを防ぐ。
+runPromiseExitは実行境界で使い、defect・中断を成功やcompleteへ握りつぶさない。
+
 ## Adoption Gates
 
 以下は実装前に根拠を記録する必要がある判断ゲート。現時点では未決・未検証であり、依存するタスクを実装完了にしない。
