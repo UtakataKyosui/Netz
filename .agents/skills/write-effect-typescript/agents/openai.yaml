@@ -1,0 +1,4 @@
+interface:
+  display_name: "Effect TypeScript"
+  short_description: "Effectの型・エラー・依存性・並行処理を公式資料に沿って設計する"
+  default_prompt: "Use $write-effect-typescript to implement or review this TypeScript code with version-correct Effect patterns."
