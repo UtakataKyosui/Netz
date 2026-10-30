@@ -1,0 +1,6 @@
+{
+	"entry": ["tests/**/*.test.ts"],
+	"ignorePatterns": ["worker-configuration.d.ts", ".agents/**", ".claude/**"],
+	"failOnParseError": true,
+	"ignoreFindings": ["src/notion.ts"]
+}
