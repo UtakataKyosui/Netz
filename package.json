@@ -8,16 +8,25 @@
 		"start": "wrangler dev",
 		"cf-typegen": "wrangler types",
 		"typecheck": "tsc --noEmit",
-		"test": "node --import tsx --test tests/*.test.ts"
+		"test": "node --import tsx --test tests/*.test.ts",
+		"check:biome": "biome ci --error-on-warnings .",
+		"check:fallow": "fallow dead-code --fail-on-issues --format compact",
+		"format": "biome check --write .",
+		"build": "wrangler deploy --dry-run --outdir dist",
+		"check:spec": "openspec validate --all --strict --no-interactive"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "2.6.4",
 		"@types/node": "^26.6.5",
+		"fallow": "3.37.0",
 		"tsx": "^4.23.15",
 		"typescript": "^5.5.2",
-		"wrangler": "^4.153.0"
+		"wrangler": "^4.153.0",
+		"@fission-ai/openspec": "1.15.0"
 	},
 	"dependencies": {
 		"@notionhq/client": "^5.28.0",
 		"effect": "4.1.0"
-	}
+	},
+	"packageManager": "pnpm@11.25.0"
 }
