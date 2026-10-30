@@ -12,10 +12,16 @@ context: |
   All business HTTP endpoints require the owner's Bearer token.
   MCP Portal and Cloudflare Workflows service adoption remain unverified choices.
   Current MVP: changes/implement-research-workflow. Artifact readiness does not mean implementation done.
+  GitHub Issues are the primary task tracker; OpenSpec inherits issue goals, scope,
+  acceptance criteria and dependencies before implementation begins.
+  Record implementation discoveries in OpenSpec. Prefer feasible technical constraint
+  removal or root-cause fixes; otherwise document and verify a compliant workaround.
+  Reflect material changes and follow-ups back into Issues. Mark blocked if no compliant path exists.
   Development change rules and issue mapping: docs/openspec-workflow.md.
 
 rules:
   proposal:
+    - "Link source Issues and inherit their goals, scope, acceptance criteria and dependencies before implementation."
     - "Identify affected issues, capability paths, scope and non-goals."
     - "Separate verified facts, proposed decisions and unverified integrations."
   specs:
@@ -23,6 +29,8 @@ rules:
     - "Specify observable behavior and errors; keep implementation choices in design."
     - "Preserve owner-only access, zero spending, evidence-backed sufficiency and shared budgets."
   design:
+    - "Record discovered constraints/problems, evidence and impact; evaluate direct fixes before workarounds."
+    - "For workarounds, record why direct resolution is difficult, remaining limitations, validation and follow-up Issues."
     - "Record decisions, alternatives, evidence and adoption gates."
     - "Use compact Mermaid for branches and state transitions; tables for exact values."
   tasks:
@@ -32,6 +40,9 @@ operations:
   apply:
     guidance:
       - "Read AGENTS.md and docs/openspec-workflow.md."
+      - "Start from a tracked Issue; update OpenSpec before proceeding with implementation affected by new findings."
+      - "Resolve technical constraints or problems where feasible; otherwise implement a documented compliant workaround."
+      - "Reflect material requirement, scope, blocker and follow-up changes into Issues; do not silently relax requirements."
       - "Update design, delta specs and tasks when implementation discoveries change them."
       - "Do not weaken constraints to match the code; resolve design gates before dependent work."
   archive:
