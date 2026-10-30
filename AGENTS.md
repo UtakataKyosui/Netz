@@ -14,6 +14,13 @@ Current MVP change: `openspec/changes/implement-research-workflow/` (not impleme
 - Artifact readiness and syntax validation do not prove implementation completion. Do not archive unfinished work.
 - Generated `.claude` / `.agents` OpenSpec integrations are CLI-owned. Put custom rules in config/docs.
 
+# Effect TypeScript
+
+For Effect implementation or review, read `.agents/skills/write-effect-typescript/SKILL.md`
+and its relevant references. This repository-owned skill is separate from generated OpenSpec skills.
+Check the installed Effect version first; bundled examples target 4.1.0.
+The skill does not install Effect or imply that the foundation in PR #9 is merged.
+
 # Cloudflare Workers
 
 STOP. Your knowledge of Cloudflare Workers APIs and limits may be outdated. Always retrieve current documentation before any Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, or Agents SDK task.
