@@ -1,7 +1,19 @@
 # Netz: specification-driven development
 
 Read `docs/openspec-workflow.md` and `openspec/config.yaml` before implementation.
-Use OpenSpec for behavior contracts and in-flight changes; use GitHub issues for tracking.
+GitHub Issues are the primary task tracker. Start from an issue and inherit its purpose,
+scope, acceptance criteria and dependencies into an OpenSpec change before implementation.
+Follow the mandatory Issue → OpenSpec → implementation → verification flow in
+`docs/openspec-workflow.md`.
+
+- Link the source issue in the OpenSpec proposal and map implementation tasks to it.
+- Record newly discovered constraints/problems and evidence in OpenSpec before affected implementation proceeds.
+- Prefer removing technical constraints or fixing root causes when feasible within accepted requirements.
+- If direct resolution is difficult, record why and choose a verified workaround that preserves the requirements.
+- Record alternatives, residual limitations, follow-up work and verification in design/tasks; update delta specs/scenarios for behavior changes.
+- Reflect material scope, acceptance, blocker and follow-up changes back into Issues; keep fine-grained implementation steps in OpenSpec.
+- A workaround does not authorize weakening owner-only access, zero spending, shared budgets or evidence criteria.
+- If no compliant solution exists, mark the affected work blocked with evidence and options; continue independent work.
 Current MVP change: `openspec/changes/implement-research-workflow/` (not implemented yet).
 
 - Read relevant main specs and active delta specs, design and tasks before editing code.
