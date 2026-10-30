@@ -53,4 +53,4 @@ jobs:
             echo "::error::Missing production Cloudflare credentials."
             exit 1
           fi
-          pnpm deploy
+          pnpm run deploy
